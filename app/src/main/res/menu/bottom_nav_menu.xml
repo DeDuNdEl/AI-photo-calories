@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:isScrollContainer="false"
+    android:windowSoftInputMode="adjustResize"
+
+    >
+
+    <item
+
+        android:title=""
+        android:icon="@drawable/custom_home"
+        app:itemBackground="@drawable/edit_text_border"
+        android:id="@+id/general"/>
+
+    <item
+
+        android:title=""
+        android:icon="@drawable/custom_statistics"
+        app:itemBackground="@drawable/edit_text_border"
+        android:id="@+id/statistics"/>
+
+    <item
+
+        android:title=""
+        android:icon="@drawable/custom_tableware"
+        app:itemBackground="@drawable/edit_text_border"
+        android:id="@+id/counter"/>
+
+    <item
+
+        android:title=""
+        android:icon="@drawable/custom_dish"
+        app:itemBackground="@drawable/edit_text_border"
+        android:id="@+id/recepties"/>
+
+</menu>

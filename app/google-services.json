@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "376511927093",
+    "firebase_url": "https://chatbot-9141f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "chatbot-9141f",
+    "storage_bucket": "chatbot-9141f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376511927093:android:750c22b53bf52bc9ecf27c",
+        "android_client_info": {
+          "package_name": "com.example.chat_bot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV48g0O8T4ORYNMXEhk5z25KYN0-xSCqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
