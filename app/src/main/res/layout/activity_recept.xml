@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activites.ReceptActivity">
+    tools:context=".Activites.ReceptActivity"
+    android:background="#FFE4B5">
 
     <TextView
         android:id="@+id/name_recept_activity"
@@ -14,14 +15,14 @@
         android:gravity="center"
         android:paddingLeft="10dp"
         android:text="имя"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintStart_toEndOf="@+id/text_PFC_ccall_recept_activity"
@@ -37,7 +38,7 @@
 
     <TextView
         android:id="@+id/text_PFC_ccall_recept_activity"
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
@@ -65,7 +66,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_PFC_ccall_recept_activity" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_needproducts_recept"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_short_description_recept_activity" />
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_steps_recept"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_needproducts_recept" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

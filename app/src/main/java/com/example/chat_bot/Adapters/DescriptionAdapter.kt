@@ -4,17 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.chat_bot.Classes.Recept
-import com.example.chat_bot.Other.DBHelper
 import com.example.chat_bot.R
-import com.squareup.picasso.Picasso
 
 
-class DescriptionAdapter(var texts: ArrayList<String>, var context: Context) : RecyclerView.Adapter<DescriptionAdapter.MyViewHolder>() {
+class DescriptionAdapter(var texts: List<String>, var context: Context) : RecyclerView.Adapter<DescriptionAdapter.MyViewHolder>() {
 
 
 

@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.chat_bot.Activites.MainActivity
 import com.example.chat_bot.Activites.ProfileActivity
+import com.example.chat_bot.Activites.ReceptActivity
 import com.example.chat_bot.Adapters.ReceptiesAdapter
 import com.example.chat_bot.Classes.Recept
 import com.example.chat_bot.Other.DBHelper
@@ -160,6 +161,48 @@ class GeneralFragment : Fragment() {
                     text_recept3.text = "${recepties.sortedByDescending { it.POC_values }[2].name}. ${recepties.sortedByDescending { it.POC_values }[2].type}.\n${recepties.sortedByDescending { it.POC_values }[2].callories} ккал / ${recepties.sortedByDescending { it.POC_values }[2].PFC} бжу\n${recepties.sortedByDescending { it.POC_values }[2].short_description}"
                     Picasso.get().load(recepties.sortedByDescending { it.POC_values }[2].photo_url).into(photo_recept3)
 
+                }
+
+                text_recept1.setOnClickListener(){
+                    val intent = Intent(context, ReceptActivity::class.java)
+
+                    intent.putExtra("name", recepties.sortedByDescending { it.POC_values }[0].name)
+                    intent.putExtra("callories", recepties.sortedByDescending { it.POC_values }[0].callories.toString())
+                    intent.putExtra("PFC", recepties.sortedByDescending { it.POC_values }[0].PFC.toString())
+                    intent.putExtra("photo_url", recepties.sortedByDescending { it.POC_values }[0].photo_url)
+                    intent.putExtra("short_description", recepties.sortedByDescending { it.POC_values }[0].short_description)
+                    intent.putExtra("type", recepties.sortedByDescending { it.POC_values }[0].type)
+                    intent.putExtra("need_products", recepties.sortedByDescending { it.POC_values }[0].need_products)
+                    intent.putExtra("steps", recepties.sortedByDescending { it.POC_values }[0].steps)
+                    view.context.startActivity(intent)
+                }
+
+                text_recept2.setOnClickListener(){
+                    val intent = Intent(context, ReceptActivity::class.java)
+
+                    intent.putExtra("name", recepties.sortedByDescending { it.POC_values }[1].name)
+                    intent.putExtra("callories", recepties.sortedByDescending { it.POC_values }[1].callories.toString())
+                    intent.putExtra("PFC", recepties.sortedByDescending { it.POC_values }[1].PFC.toString())
+                    intent.putExtra("photo_url", recepties.sortedByDescending { it.POC_values }[1].photo_url)
+                    intent.putExtra("short_description", recepties.sortedByDescending { it.POC_values }[1].short_description)
+                    intent.putExtra("type", recepties.sortedByDescending { it.POC_values }[1].type)
+                    intent.putExtra("need_products", recepties.sortedByDescending { it.POC_values }[1].need_products)
+                    intent.putExtra("steps", recepties.sortedByDescending { it.POC_values }[1].steps)
+                    view.context.startActivity(intent)
+                }
+
+                text_recept3.setOnClickListener(){
+                    val intent = Intent(context, ReceptActivity::class.java)
+
+                    intent.putExtra("name", recepties.sortedByDescending { it.POC_values }[2].name)
+                    intent.putExtra("callories", recepties.sortedByDescending { it.POC_values }[2].callories.toString())
+                    intent.putExtra("PFC", recepties.sortedByDescending { it.POC_values }[2].PFC.toString())
+                    intent.putExtra("photo_url", recepties.sortedByDescending { it.POC_values }[2].photo_url)
+                    intent.putExtra("short_description", recepties.sortedByDescending { it.POC_values }[2].short_description)
+                    intent.putExtra("type", recepties.sortedByDescending { it.POC_values }[2].type)
+                    intent.putExtra("need_products", recepties.sortedByDescending { it.POC_values }[2].need_products)
+                    intent.putExtra("steps", recepties.sortedByDescending { it.POC_values }[2].steps)
+                    view.context.startActivity(intent)
                 }
             }
 
