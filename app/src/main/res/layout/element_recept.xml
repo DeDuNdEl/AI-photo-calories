@@ -26,6 +26,7 @@
         android:layout_height="75dp"
         android:background="@drawable/edit_text_border"
         android:breakStrategy="simple"
+        android:textColor="#000000"
         android:gravity="center|start"
         android:paddingLeft="10dp"
         android:text="Название. Тип приема Пищи\nКкал/БЖУ\nКраткое описание "
