@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.chat_bot.Activites.CounterInfoActivity
 import com.example.chat_bot.Activites.MainActivity
 import com.example.chat_bot.Activites.ProfileActivity
+import com.example.chat_bot.Other.AppInstallationManager
 import com.example.chat_bot.R
 import com.example.chat_bot.Other.DBHelper
 import com.example.chat_bot.Other.MyApplication
@@ -107,6 +108,7 @@ class CounterFragment : androidx.fragment.app.Fragment() {
         val lunch_photo_counter: ImageView = view.findViewById(R.id.lunch_photo_counter)
         val dinner_photo_counter: ImageView = view.findViewById(R.id.dinner_photo_counter)
         val other_photo_counter: ImageView = view.findViewById(R.id.other_photo_counter)
+        val num_of_day: TextView = view.findViewById(R.id.num_of_day_counter)
 
         val breakfast_counter: TextView = view.findViewById(R.id.breakfast_counter)
         val lunch_counter: TextView = view.findViewById(R.id.lunch_counter)
@@ -122,6 +124,7 @@ class CounterFragment : androidx.fragment.app.Fragment() {
 
         change_sums()
         need_call_summ()
+        num_of_day.text = " День " + AppInstallationManager(view.context).getDaysSinceInstallation()
 
         profile_icon.setOnClickListener(){
 
@@ -193,7 +196,6 @@ class CounterFragment : androidx.fragment.app.Fragment() {
                     val inputStream = activity?.contentResolver?.openInputStream(selectedImageUri!!)
                     val bitmap = BitmapFactory.decodeStream(inputStream)
 
-
                     // нейронка
 
                     val imageProcessor = ImageProcessor.Builder()
@@ -223,12 +225,13 @@ class CounterFragment : androidx.fragment.app.Fragment() {
                     val SQLdb = DBHelper(requireView().context, null)
 
                     Firebasedb.getReference("products/").child(labels[maxIdx]).get().addOnSuccessListener {
-
+                        println(labels[maxIdx])
                         SQLdb.insertToEating(name_eating,
                             labels[maxIdx],
                             (it.child("callories").value as String).toDouble(),
                             (it.child("PFC").value as String).toDouble(),
-                            SimpleDateFormat("hh:mm:ss").format(Date())
+                            SimpleDateFormat("HH:mm:ss").format(Date()),
+                            SimpleDateFormat("E ").format(Date())
 
                         )
 

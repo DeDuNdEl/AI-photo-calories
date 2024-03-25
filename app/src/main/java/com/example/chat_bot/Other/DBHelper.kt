@@ -5,6 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class DBHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, "localSQL", factory, 1) {
@@ -21,15 +23,20 @@ class DBHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?)
     fun createDB(){
 
         val db = this.writableDatabase
-        db.execSQL("CREATE TABLE IF NOT EXISTS breakfast (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT)")
-        db.execSQL("CREATE TABLE IF NOT EXISTS lunch (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT)")
-        db.execSQL("CREATE TABLE IF NOT EXISTS dinner (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT)")
-        db.execSQL("CREATE TABLE IF NOT EXISTS other (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT)")
+        println("TEST000")
+        AppInstallationManager(context).saveInstallationDate()
+        db.execSQL("CREATE TABLE IF NOT EXISTS settings (week INT DEFAULT 0)")
+        db.execSQL("CREATE TABLE IF NOT EXISTS breakfast (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT, product_day TEXT)")
+        db.execSQL("CREATE TABLE IF NOT EXISTS lunch (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT, product_day TEXT)")
+        db.execSQL("CREATE TABLE IF NOT EXISTS dinner (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT, product_day TEXT)")
+        db.execSQL("CREATE TABLE IF NOT EXISTS other (product_name TEXT, product_callories REAL, product_PFC REAL, product_date TEXT, product_day TEXT)")
+
+        //println(getTableData("settings")[0])
 
         db.close()
     }
 
-    fun insertToEating(table_name: String, product_name: String, product_callories: Double, product_PFC: Double, product_date: String){
+    fun insertToEating(table_name: String, product_name: String, product_callories: Double, product_PFC: Double, product_date: String, product_day: String){
 
         val values = ContentValues()
         val db = this.writableDatabase
@@ -38,8 +45,21 @@ class DBHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?)
         values.put("product_callories", product_callories)
         values.put("product_PFC", product_PFC)
         values.put("product_date", product_date)
+        values.put("product_day", product_day)
 
         db.insert(table_name,null ,values)
+
+        db.close()
+    }
+
+    fun insertToSettings_week(){
+
+        val values = ContentValues()
+        val db = this.writableDatabase
+
+        values.put("week", 0)
+
+        db.insert("settings",null ,values)
 
         db.close()
     }

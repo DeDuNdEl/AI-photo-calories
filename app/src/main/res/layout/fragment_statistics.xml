@@ -4,24 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.StatisticsFragment"
-    android:background="#FFE4B5">
+    android:background="#FFE4B5"
+    android:foregroundTint="#CFA2A2"
+    tools:context=".Fragments.StatisticsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Статистика"
-            android:textColor="#000000"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass">
 
         <ImageView
             android:id="@+id/profile_avatar"
@@ -32,5 +22,80 @@
             android:src="@drawable/custom_user_avatar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/age_statistic"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_strong"
+
+            android:gravity="center"
+            android:text="График изменения каллориев"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/barChart_vertical_ccal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_avatar" />
+
+        <com.db.williamchart.view.BarChartView
+            android:id="@+id/barChart_vertical_ccal"
+
+            android:layout_width="0dp"
+
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+
+
+            android:foregroundTint="#66DF38"
+            app:chart_axis="x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_avatar"
+            app:layout_constraintVertical_bias="0.183" />
+
+        <TextView
+            android:id="@+id/weight_statistic"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_strong"
+
+            android:gravity="center"
+            android:text="График изменения веса"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/barChart_vertical_weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barChart_vertical_ccal" />
+
+        <com.db.williamchart.view.BarChartView
+            android:id="@+id/barChart_vertical_weight"
+
+            android:layout_width="0dp"
+
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+
+
+            android:foregroundTint="#66DF38"
+            app:chart_axis="x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barChart_vertical_ccal"
+            app:layout_constraintVertical_bias="0.183" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

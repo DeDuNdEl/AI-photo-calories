@@ -19,6 +19,7 @@ import com.example.chat_bot.Activites.ProfileActivity
 import com.example.chat_bot.Activites.ReceptActivity
 import com.example.chat_bot.Adapters.ReceptiesAdapter
 import com.example.chat_bot.Classes.Recept
+import com.example.chat_bot.Other.AppInstallationManager
 import com.example.chat_bot.Other.DBHelper
 import com.example.chat_bot.Other.MyApplication
 import com.example.chat_bot.R
@@ -103,6 +104,8 @@ class GeneralFragment : Fragment() {
 
         var user_preferences = ArrayList<String>()
         var user_contraindications = ArrayList<String>()
+
+        println("DATES = " + AppInstallationManager(view.context).getDaysSinceInstallation())
 
         FirebaseDatabase.getInstance().getReference("users/${MyApplication().getUserName()}").get().addOnSuccessListener(){
             var up = it.child("preferences").value.toString()

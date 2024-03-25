@@ -1,6 +1,7 @@
 package com.example.chat_bot.Activites
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -16,10 +17,17 @@ import com.example.chat_bot.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding : ActivityMainBinding
     @SuppressLint("MissingInflatedId")
 
+
+    var prefs: SharedPreferences? = null
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

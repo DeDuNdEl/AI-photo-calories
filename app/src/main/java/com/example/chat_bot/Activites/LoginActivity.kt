@@ -19,11 +19,6 @@ import java.nio.MappedByteBuffer
 class LoginActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
 
-    companion object {
-        private val REQUEST_TAKE_PHOTO = 0
-        private val REQUEST_SELECT_IMAGE_IN_ALBUM = 1
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -39,7 +34,10 @@ class LoginActivity : AppCompatActivity() {
             val name = name_input.text.toString().trim()
             val password = password_input.text.toString().trim()
 
+
+
             database.child("${name}/").get().addOnSuccessListener {
+
 
                 if ((it.exists())){
                     database.child("${name}/password/").get().addOnSuccessListener {

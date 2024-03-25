@@ -206,5 +206,156 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_recept_general2" />
 
+        <TextView
+            android:id="@+id/text_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:text="Дней подсчета без пропусков:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_recept_general3" />
+
+
+        <TextView
+            android:id="@+id/pass_1_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="пн"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_2_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="вт"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_1_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_3_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="ср"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_2_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_4_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="чт"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_3_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_5_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="пт"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_4_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_6_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="сб"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_5_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+        <TextView
+            android:id="@+id/pass_7_general"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center"
+            android:text="вс"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/pass_6_general"
+            app:layout_constraintTop_toBottomOf="@+id/text_view2" />
+
+
+        <TextView
+            android:id="@+id/text_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:text="Рекорд дней без пропуска:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pass_1_general" />
+
+        <TextView
+            android:id="@+id/pass_days_record"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border"
+            android:breakStrategy="simple"
+            android:gravity="center|left"
+            android:text="   0 дней"
+            android:textColor="#000000"
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/text_view3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
